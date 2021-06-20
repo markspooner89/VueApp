@@ -2,7 +2,12 @@
   <div>
     <AppTitle type="h2" text="Welcome" />
     <div :key="grade.id" v-for="grade in grades">
-      <p>{{ grade.name }}</p>
+      <p>
+        <router-link :to="{ name: 'Grade', params: { id: grade.id } }"
+          >View</router-link
+        >
+        - {{ grade.name }}
+      </p>
     </div>
   </div>
 </template>
