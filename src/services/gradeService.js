@@ -1,27 +1,32 @@
 const gradeData = [
-    {
-        "id": 1,
-        "name": "White Belt"
-    },
-    {
-        "id": 2,
-        "name": "Yellow Tag"
-    },
-    {
-        "id": 3,
-        "name": "Yellow Belt"
-    }
+  {
+    id: 1,
+    name: "White Belt",
+  },
+  {
+    id: 2,
+    name: "Yellow Tag",
+  },
+  {
+    id: 3,
+    name: "Yellow Belt",
+  },
 ];
 
-const getGrades = () => { 
-    return gradeData;
+const getGradesAsync = () => {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(gradeData), 600);
+  });
 };
 
-const getGrade = (id) => { 
-    return gradeData.find(g => g.id === id);
+const getGradeAsync = (id) => {
+  return new Promise((resolve) => {
+    const grade = gradeData.find((g) => g.id === id);
+    setTimeout(() => resolve(grade), 600);
+  });
 };
 
-export default { 
-    getGrades,
-    getGrade
+export default {
+  getGradesAsync,
+  getGradeAsync,
 };
