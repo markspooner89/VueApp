@@ -13,15 +13,20 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import gradeService from "../services/gradeService";
 import AppTitle from "@/components/AppTitle.vue";
 export default {
   name: "Home",
   components: {
     AppTitle,
   },
-  computed: mapGetters({
-    grades: "orderedGrades",
-  }),
+  data() { 
+    return { 
+      grades: null
+    }
+  },
+  mounted() {
+    this.grades = gradeService.getGrades();
+  }
 };
 </script>

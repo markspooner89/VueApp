@@ -1,11 +1,12 @@
 <template>
   <div>
     <AppTitle type="h2" v-bind:text="selectedGrade.name" />
+    <router-link :to="{ name: 'Home' }">Back</router-link>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import gradeService from "../services/gradeService";
 import AppTitle from "@/components/AppTitle.vue";
 export default {
   name: "Grade",
@@ -17,9 +18,6 @@ export default {
       selectedGrade: null,
     };
   },
-  computed: mapState({
-    grades: (state) => state.grades,
-  }),
   mounted() {
     this.populateGrade();
   },
@@ -27,7 +25,7 @@ export default {
     populateGrade() {
       const id = parseInt(this.$route.params.id);
       if (isNaN(id)) this.$router.push({ name: "NotFound" });
-      const grade = this.grades.find((g) => g.id === id);
+      const grade = gradeService.getGrade(id);
       if (!grade) this.$router.push({ name: "NotFound" });
       this.selectedGrade = grade;
     },
