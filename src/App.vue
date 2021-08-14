@@ -1,22 +1,19 @@
 <template>
   <div>
     <AppTitle type="h1" text="App" />
-    <button @click="toggleTranslation">{{ showTranslation }}</button>
+    <TheToggleTranslationButton />
     <router-view />
   </div>
 </template>
 
 <script>
 import AppTitle from "@/components/AppTitle.vue";
-import { mapState, mapActions } from "vuex";
+import TheToggleTranslationButton from "@/components/TheToggleTranslationButton.vue";
 export default {
   name: "App",
   components: {
     AppTitle,
+    TheToggleTranslationButton,
   },
-  computed: mapState({
-    showTranslation: (state) => state.showTranslation,
-  }),
-  methods: mapActions(["toggleTranslation"]),
 };
 </script>
