@@ -2,7 +2,14 @@
   <div>
     <AppSpinner v-if="gradeLoading" text="Loading..." />
     <div v-if="gradeLoaded && !gradeLoading">
-      <AppTitle type="h2" v-bind:text="selectedGrade.name" />
+      <AppTitle
+        type="h2"
+        v-bind:text="
+          showTranslation
+            ? selectedGrade.name.english
+            : selectedGrade.name.korean
+        "
+      />
       <router-link :to="{ name: 'Home' }">Back</router-link>
     </div>
   </div>
@@ -12,6 +19,7 @@
 import gradeService from "@/services/gradeService";
 import AppTitle from "@/components/AppTitle.vue";
 import AppSpinner from "@/components/AppSpinner.vue";
+import { mapState } from "vuex";
 export default {
   name: "Grade",
   components: {
@@ -25,6 +33,9 @@ export default {
       gradeLoaded: false,
     };
   },
+  computed: mapState({
+    showTranslation: (state) => state.showTranslation,
+  }),
   async mounted() {
     await this.populateGrade();
   },

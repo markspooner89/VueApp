@@ -9,7 +9,7 @@
           <router-link :to="{ name: 'Grade', params: { id: grade.id } }"
             >View</router-link
           >
-          - {{ grade.name }}
+          - {{ showTranslation ? grade.name.english : grade.name.korean }}
         </p>
       </div>
     </div>
@@ -20,6 +20,7 @@
 import gradeService from "@/services/gradeService";
 import AppTitle from "@/components/AppTitle.vue";
 import AppSpinner from "@/components/AppSpinner.vue";
+import { mapState } from "vuex";
 export default {
   name: "Home",
   components: {
@@ -33,6 +34,9 @@ export default {
       gradesLoaded: false,
     };
   },
+  computed: mapState({
+    showTranslation: (state) => state.showTranslation,
+  }),
   async mounted() {
     this.gradesLoading = true;
     this.grades = await gradeService.getGradesAsync();

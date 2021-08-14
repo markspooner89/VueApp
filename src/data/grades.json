@@ -1,14 +1,9 @@
 [
   {
     "id": 1,
-    "name": "White Belt"
-  },
-  {
-    "id": 2,
-    "name": "Yellow Tag"
-  },
-  {
-    "id": 3,
-    "name": "Yellow Belt"
+    "name": {
+      "english": "White Belt",
+      "korean": "10th Kup"
+    }
   }
 ]
