@@ -4,6 +4,25 @@
     "name": {
       "english": "White Belt",
       "korean": "10th Kup"
-    }
+    },
+    "patterns": []
+  },
+  {
+    "id": 2,
+    "name": {
+      "english": "Yellow Tag",
+      "korean": "9th Kup"
+    },
+    "patterns": [ 
+      {
+        "name": { 
+          "english": "Pattern 1",
+          "korean": "Il Jang"
+        },
+        "moveCount": 18,
+        "meaning": "Heaven and Light",
+        "videoUrl": null
+      }
+    ]
   }
 ]

@@ -1,6 +1,13 @@
 <template>
-  <h1 v-if="type === 'h1'">{{ text }}</h1>
-  <h2 v-else-if="type === 'h2'">{{ text }}</h2>
+  <h1 v-if="type === 'h1'">
+    <slot>{{ text }}</slot>
+  </h1>
+  <h2 v-else-if="type === 'h2'">
+    <slot>{{ text }}</slot>
+  </h2>
+  <h3 v-else-if="type === 'h3'">
+    <slot>{{ text }}</slot>
+  </h3>
 </template>
 
 <script>
@@ -10,11 +17,11 @@ export default {
     type: {
       type: String,
       required: true,
-      validator: (val) => ["h1", "h2"].indexOf(val) > -1,
+      validator: (val) => ["h1", "h2", "h3"].indexOf(val) > -1,
     },
     text: {
       type: String,
-      required: true,
+      required: false,
       validator: (val) => val.trim().length > 0,
     },
   },
