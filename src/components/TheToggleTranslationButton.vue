@@ -1,5 +1,5 @@
 <template>
-  <button @click="toggleTranslation">
+  <button class="button is-primary" @click="toggleTranslation">
     {{ showTranslation ? "Show Korean" : "Show English" }}
   </button>
 </template>
