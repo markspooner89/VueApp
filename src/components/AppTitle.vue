@@ -1,11 +1,11 @@
 <template>
-  <h1 v-if="type === 'h1'">
+  <h1 class="is-size-1" v-if="type === 'h1'">
     <slot>{{ text }}</slot>
   </h1>
-  <h2 v-else-if="type === 'h2'">
+  <h2 class="is-size-2" v-else-if="type === 'h2'">
     <slot>{{ text }}</slot>
   </h2>
-  <h3 v-else-if="type === 'h3'">
+  <h3 class="is-size-3" v-else-if="type === 'h3'">
     <slot>{{ text }}</slot>
   </h3>
 </template>

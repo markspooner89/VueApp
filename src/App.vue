@@ -2,6 +2,7 @@
   <div>
     <AppTitle type="h1" text="App" />
     <TheToggleTranslationButton />
+      <font-awesome-icon icon="jedi" />
     <router-view />
   </div>
 </template>
