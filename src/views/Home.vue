@@ -4,15 +4,9 @@
     <AppSpinner v-if="gradesLoading" text="Loading..." />
     <div v-if="gradesLoaded && !gradesLoading">
       <div :key="grade.id" v-for="grade in grades">
-        <p>
-          <router-link :to="{ name: 'Grade', params: { id: grade.id } }"
-            >View</router-link
-          >
-          - {{ showTranslation ? grade.name.english : grade.name.korean }}
-        </p>
+        <GradeCard v-bind:id="grade.id" v-bind:title="grade.name.english" />
       </div>
     </div>
-    <GradeCard />
   </div>
 </template>
 
@@ -27,7 +21,7 @@ export default {
   components: {
     AppTitle,
     AppSpinner,
-    GradeCard
+    GradeCard,
   },
   data() {
     return {

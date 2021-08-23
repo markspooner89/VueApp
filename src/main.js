@@ -4,10 +4,10 @@ import router from "./router";
 import store from "./store";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faJedi } from "@fortawesome/free-solid-svg-icons";
+import { faMapMarkerAlt, faClock, faCalendar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faJedi);
+library.add(faMapMarkerAlt, faClock, faCalendar);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
