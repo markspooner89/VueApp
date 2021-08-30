@@ -1,16 +1,26 @@
 <template>
-  <p>{{ text }}</p>
+  <span>
+    <font-awesome-icon id="spinner" icon="circle-notch" />
+    &nbsp;<span>Loading...</span>
+  </span>
 </template>
 
 <script>
 export default {
   name: "AppSpinner",
-  props: {
-    text: {
-      type: String,
-      required: true,
-      validator: (val) => val.trim().length > 0,
-    },
-  },
 };
 </script>
+
+<style scoped>
+#spinner {
+  animation: spin-animation 0.8s linear infinite;
+}
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>

@@ -5,13 +5,11 @@ import store from "./store";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
-  faMapMarkerAlt,
-  faClock,
-  faCalendar,
+  faCircleNotch,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faMapMarkerAlt, faClock, faCalendar);
+library.add(faCircleNotch);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
