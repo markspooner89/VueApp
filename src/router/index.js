@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
-import Grade from "../views/Grade.vue";
-import NotFound from "../views/NotFound.vue";
+import Home from "@/views/Home.vue";
+import About from "@/views/About.vue";
+import NotFound from "@/views/NotFound.vue";
 
 Vue.use(VueRouter);
 
@@ -13,9 +13,9 @@ const routes = [
     component: Home,
   },
   {
-    path: "/Grade/:id",
-    name: "Grade",
-    component: Grade,
+    path: "/About",
+    name: "About",
+    component: About,
   },
   {
     path: "*",
